@@ -1,0 +1,25 @@
+{
+  "name": "svl-api",
+  "version": "1.0.0",
+  "description": "Projeto Books. Sistema de Vendas de Livros (SVL)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/georgebarreira10/svl-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/georgebarreira10/svl-api/issues"
+  },
+  "homepage": "https://github.com/georgebarreira10/svl-api#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^6.7.3"
+  }
+}
