@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 // acrescentar senha do atlas no local de <passaword>. acrescentar /node_mongo (nome do database)
 //ir no database (atlas) clicar em database e connect. 
 //clicar em mongoDB drivers connect your application to your cluster. copiar a string
-mongoose.connect('mongodb+srv://georgebarreira:01040813@cluster0.dwtskjh.mongodb.net/node_mongo')
+mongoose.connect('mongodb+srv://georgebarreira:01040813@cluster0.9ms6wtq.mongodb.net/svl')
   
 // a variavel db recebe a conexao do banco e vamos exporta-la
 let db = mongoose.connection;
