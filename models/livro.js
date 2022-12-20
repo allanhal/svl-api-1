@@ -9,7 +9,7 @@ const livroSchema = new mongoose.Schema({
     favorite: { type: Boolean}
 
 
-});
+})
 
 const livros = mongoose.model('livros', livroSchema);
 module.exports = livros;
