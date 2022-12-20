@@ -13,22 +13,19 @@ class LivroController {
     }
 
     static findById = (req, res) => {
-
         const id = req.params.id
 
-        livros.findById(id, (error, livros) => {
-
+        livros.findById(id, (err, livros) => {
             //tratar o erro ou o sucesso baseado na funçao de 
             //utilizando os parametros erro, livros
-
-
-            if (error) {
+            if (err) {
+                console.log('1')
                 res.status(404).send({
                     message: 'Livro nao encontrado',
-                    error: error.message
+                    error: err.message
                 })
-
             } else {
+                console.log('2', livros)
                 res.status(200).json(livros)
             }
 
@@ -47,25 +44,42 @@ class LivroController {
 
             } else {
                 res.status(201).send(livro.toJSON(livro))
-            }})
-        
-                
-}
+            }
+        })
 
-static deleteBook = (req, res) => {
-    const id = req.params.id
-    livros.findByIdAndDelete(id, (error) => {
 
-        if (error) {
-            res.status(404).send({
-                message: 'Não foi possível deletar o livro',
-                error: error.message
+    }
+
+    static deleteBook = (req, res) => {
+        const id = req.params.id
+        livros.findByIdAndDelete(id, (error) => {
+
+            if (error) {
+                res.status(404).send({
+                    message: 'Não foi possível deletar o livro',
+                    error: error.message
+                })
+
+
+            } else {
+                res.status(200).send({ message: 'O livro foi deletado!' })
+            }
             })
+    }
 
-
-        } else {
-            res.status(200).json(livros)
-        }
-})}}
+    static updateBook = (req, res) => {
+        let id = req.params.id
+        livros.findByIdAndUpdate(id, { $set: req.body }, (error) => {
+            if (error) {
+                res.status(404).send({
+                    message: 'Não foi possível atualizar o livro',
+                    error: error.message
+                })
+            } else {
+                res.status(200).send({ message: 'O livro foi atualizado!' })
+            }
+        })
+    }
+}
 
 module.exports = LivroController
