@@ -1,9 +1,11 @@
 const mongoose = require('mongoose');
+
+//atenção! os 'types': começam com letra maiúscula
 const autorSchema = new mongoose.Schema({
     id: { type: String },
-    nome: { type: String, require: true },
+    nome: { type: String, require: true },//atenção! os 'types': começam com letra maiúscula
     nacionalidade: { type: String, require: true },
-    idade: { type: number }
+    idade: { type: Number }
 
 })
 

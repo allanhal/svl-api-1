@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+//atenção! os 'types': começam com letra maiúscula
 const livroSchema = new mongoose.Schema({
     id: { type: String },
     title: { type: String, required: true },
