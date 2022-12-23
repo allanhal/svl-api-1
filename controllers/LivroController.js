@@ -6,7 +6,10 @@ class LivroController {
 
     //'static' da segurança. variavel findAllBooks = metodo para pegar todos o livros
     static findAll = (req, res) => {
-        livros.find((error, livros) => {
+        livros.find()
+        //acrescentamos .populate e .exec
+        .populate('autores')
+        .exec((error, livros) => {
             res.status(200).json(livros)
         })
 
