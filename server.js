@@ -1,28 +1,26 @@
-const express = require('express');
-const routes = require('./routes/index')
+const express = require("express");
+// const routes = require('./routes/index')
 // create new express app and save it as "app"
 const app = express();
 
 // const routes = require('./routes/livroRoutes')
 
-const db = require('./config/db')
-// const livros = require('./models/livro')
+// const db = require('./config/db')
+// // const livros = require('./models/livro')
 
-db.on('error', console.log.bind(console, 'Erro ao conectar o banco!'))
+// db.on('error', console.log.bind(console, 'Erro ao conectar o banco!'))
 
-db.once('open', () => {
-  console.log('Conexao realizada com sucesso!')
-})
-// server configuration
-const PORT = 5000;
+// db.once('open', () => {
+//   console.log('Conexao realizada com sucesso!')
+// })
+// // server configuration
+const PORT = 10000;
 
-
-routes(app)
+// routes(app)
 
 // create a route for the app
-app.get('/', (req, res) => {
-  res.send('Servidor Subiu');
-
+app.get("/", (req, res) => {
+  res.send("Servidor Subiu");
 });
 
 //mongoosse queries Ex: '.find'
@@ -32,7 +30,6 @@ app.get('/', (req, res) => {
 //   })
 
 // })
-
 
 // make the server listen to requests
 app.listen(PORT, () => {
