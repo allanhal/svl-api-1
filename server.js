@@ -1,9 +1,9 @@
 const express = require("express");
-const routes = require("./routes/index");
+const routes = require("./routes");
 // create new express app and save it as "app"
 const app = express();
 
-const db = require("./config/db");
+const db = require("./db");
 
 db.on("error", console.log.bind(console, "Erro ao conectar o banco!"));
 db.once("open", () => {
