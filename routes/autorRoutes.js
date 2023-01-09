@@ -1,5 +1,5 @@
 const express = require("express");
-const AutorController = require("./autorController");
+const AutorController = require("../controllers/autorController");
 
 const routes = express.Router();
 //nao colocar "; porque pode encerrar o codigo.

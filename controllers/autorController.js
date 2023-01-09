@@ -1,4 +1,4 @@
-const autores = require("./autor");
+const autores = require("../db/autor");
 
 class AutorController {
   //'static' da segurança. variavel findAllBooks = metodo para pegar todos o autores

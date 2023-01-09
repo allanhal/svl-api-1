@@ -3,7 +3,7 @@ const routes = require("./routes");
 // create new express app and save it as "app"
 const app = express();
 
-const db = require("./db");
+const db = require("./db/dbConfig");
 
 db.on("error", console.log.bind(console, "Erro ao conectar o banco!"));
 db.once("open", () => {

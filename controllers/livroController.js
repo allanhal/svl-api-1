@@ -1,6 +1,6 @@
 //.. dois pontos para voltar para a raiz
 
-const livros = require("./livro");
+const livros = require("../db/livro");
 
 class LivroController {
   //'static' da segurança. variavel findAllBooks = metodo para pegar todos o livros
